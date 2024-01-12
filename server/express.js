@@ -6,8 +6,10 @@ import cookieParser from "cookie-parser";
 import usuariosRutas from "./rutas/usuario.rutas.js";
 import docenteRutas from "./rutas/docente.rutas.js";
 import autorizadoRutas from "./rutas/autorizado.rutas.js";
-
+import path from "path";
 import template from "../template";
+
+const CURRENT_WORKING_DIR = process.cwd();
 
 const app = express();
 
@@ -17,6 +19,8 @@ app.use(cookieParser());
 app.use(compress());
 app.use(helmet());
 app.use(cors());
+
+app.use("/dist", express.static(path.join(CURRENT_WORKING_DIR, "/dist")));
 
 app.use(usuariosRutas);
 app.use(docenteRutas);

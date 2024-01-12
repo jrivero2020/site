@@ -3,7 +3,9 @@ import { hot } from "react-hot-loader";
 const HelloWorld = () => {
   return (
     <div>
-      <h1>Hola a Todos, Comenzando una vez más!</h1>
+      <h1>
+        Hola a Todos, Comenzando una vez más!<br>Debiera ser otra cosa</br>
+      </h1>
     </div>
   );
 };
